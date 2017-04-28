@@ -33,9 +33,6 @@ PRODUCT_PACKAGES := \
     NotoSansBengaliUI-Bold.ttf \
     NotoSansBuginese-Regular.ttf \
     NotoSansBuhid-Regular.ttf \
-    NotoSansCJK-Regular.ttc \
-    NotoSansCJK-Medium.ttc \
-    NotoSansCJK-Bold.ttc \
     NotoSansCanadianAboriginal-Regular.ttf \
     NotoSansCham-Regular.ttf \
     NotoSansCham-Bold.ttf \
@@ -62,6 +59,9 @@ PRODUCT_PACKAGES := \
     NotoSansHebrew-Regular.ttf \
     NotoSansHebrew-Bold.ttf \
     NotoSansJavanese-Regular.ttf \
+    NotoSansJP-Bold.otf \
+    NotoSansJP-Medium.otf \
+    NotoSansJP-Regular.otf \
     NotoSansKannada-Regular.ttf \
     NotoSansKannada-Bold.ttf \
     NotoSansKannadaUI-Regular.ttf \
@@ -71,6 +71,9 @@ PRODUCT_PACKAGES := \
     NotoSansKhmer-Bold.ttf \
     NotoSansKhmerUI-Regular.ttf \
     NotoSansKhmerUI-Bold.ttf \
+    NotoSansKR-Bold.otf \
+    NotoSansKR-Medium.otf \
+    NotoSansKR-Regular.otf \
     NotoSansLao-Regular.ttf \
     NotoSansLao-Bold.ttf \
     NotoSansLaoUI-Regular.ttf \
@@ -98,12 +101,14 @@ PRODUCT_PACKAGES := \
     NotoSansOriyaUI-Bold.ttf \
     NotoSansRejang-Regular.ttf \
     NotoSansSaurashtra-Regular.ttf \
+    NotoSansSC-Bold.otf \
+    NotoSansSC-Medium.otf \
+    NotoSansSC-Regular.otf \
     NotoSansSinhala-Regular.ttf \
     NotoSansSinhala-Bold.ttf \
     NotoSansSundanese-Regular.ttf \
     NotoSansSylotiNagri-Regular.ttf \
     NotoSansSymbols-Regular-Subsetted.ttf \
-    NotoSansSymbols-Regular-Subsetted2.ttf \
     NotoSansSyriacEstrangela-Regular.ttf \
     NotoSansTagbanwa-Regular.ttf \
     NotoSansTaiLe-Regular.ttf \
@@ -113,6 +118,9 @@ PRODUCT_PACKAGES := \
     NotoSansTamil-Bold.ttf \
     NotoSansTamilUI-Regular.ttf \
     NotoSansTamilUI-Bold.ttf \
+    NotoSansTC-Bold.otf \
+    NotoSansTC-Medium.otf \
+    NotoSansTC-Regular.otf \
     NotoSansTelugu-Regular.ttf \
     NotoSansTelugu-Bold.ttf \
     NotoSansTeluguUI-Regular.ttf \
@@ -124,7 +132,6 @@ PRODUCT_PACKAGES := \
     NotoSansThaiUI-Regular.ttf \
     NotoSansThaiUI-Bold.ttf \
     NotoSansTibetan-Regular.ttf \
-    NotoSansTibetan-Bold.ttf \
     NotoSansTifinagh-Regular.ttf \
     NotoSansVai-Regular.ttf \
     NotoSansYi-Regular.ttf \

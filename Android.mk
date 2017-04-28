@@ -14,6 +14,11 @@
 
 NOTO_DIR := $(call my-dir)
 
+# Use full Noto Sans Japanese font on non-smaller footprints
+ifneq ($(SMALLER_FONT_FOOTPRINT),true)
+FONT_NOTOSANS_JP_FULL := true
+endif
+
 # We have to use BUILD_PREBUILT instead of PRODUCT_COPY_FILES,
 # to copy over the NOTICE file.
 #############################################################################
@@ -39,13 +44,38 @@ ifneq ($(SMALLER_FONT_FOOTPRINT),true)
 LOCAL_PATH := $(NOTO_DIR)/cjk
 
 font_src_files := \
-    NotoSansCJK-Regular.ttc \
-    NotoSansCJK-Medium.ttc \
-    NotoSansCJK-Bold.ttc
+    NotoSansKR-Bold.otf \
+    NotoSansKR-Medium.otf \
+    NotoSansKR-Regular.otf \
+    NotoSansSC-Bold.otf \
+    NotoSansSC-Medium.otf \
+    NotoSansSC-Regular.otf \
+    NotoSansTC-Bold.otf \
+    NotoSansTC-Medium.otf \
+    NotoSansTC-Regular.otf
 
 $(foreach f, $(font_src_files), $(call build-one-font-module, $(f)))
 font_src_files :=
 
+#############################################################################
+# Include NotoSansJP, or a subset.
+#############################################################################
+
+ifeq ($(FONT_NOTOSANS_JP_FULL),true)
+noto_sans_jp_src := NotoSansJP-Regular.otf
+else
+noto_sans_jp_src := NotoSansJP-Regular-Subsetted.otf
+endif # FONT_NOTOSANS_JP_FULL
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := NotoSansJP-Regular.otf
+LOCAL_SRC_FILES := $(noto_sans_jp_src)
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_PATH := $(TARGET_OUT)/fonts
+include $(BUILD_PREBUILT)
+
+noto_sans_jp_src :=
 endif # !SMALLER_FONT_FOOTPRINT
 
 
@@ -161,7 +191,6 @@ font_src_files += \
     NotoSansThaiUI-Regular.ttf \
     NotoSansThaiUI-Bold.ttf \
     NotoSansTibetan-Regular.ttf \
-    NotoSansTibetan-Bold.ttf \
     NotoSansTifinagh-Regular.ttf \
     NotoSansVai-Regular.ttf \
     NotoSansYi-Regular.ttf
@@ -182,8 +211,7 @@ font_src_files += \
     NotoSansGeorgian-Bold.ttf \
     NotoSansHebrew-Regular.ttf \
     NotoSansHebrew-Bold.ttf \
-    NotoSansSymbols-Regular-Subsetted.ttf \
-    NotoSansSymbols-Regular-Subsetted2.ttf
+    NotoSansSymbols-Regular-Subsetted.ttf
 endif # !MINIMAL_FONT_FOOTPRINT
 
 $(foreach f, $(font_src_files), $(call build-one-font-module, $(f)))
